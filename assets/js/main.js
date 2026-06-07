@@ -4,6 +4,10 @@ const AUTH_KEY = "heartfeel_admin_auth";
 const DB_NAME = "HeartFeelDB";
 const DB_VERSION = 1;
 const DB_STORE = "siteData";
+const SITE_DATA_FILE = "site-data.json";
+const GITHUB_REPO = "otabajezreel-del/heartfeel-foundation";
+const GITHUB_BRANCH = "main";
+const GITHUB_API_BASE = "https://api.github.com";
 
 // IndexedDB cache (in-memory backup)
 let dbCache = {};
@@ -112,6 +116,86 @@ async function loadDBCache() {
   }
 }
 
+function encodeBase64(str) {
+  return window.btoa(unescape(encodeURIComponent(str)));
+}
+
+async function fetchSiteDataFile() {
+  try {
+    const response = await fetch(`${SITE_DATA_FILE}?t=${Date.now()}`);
+    if (!response.ok) {
+      if (response.status !== 404) {
+        console.warn('Unable to fetch remote site data:', response.status, response.statusText);
+      }
+      return null;
+    }
+    const data = await response.json();
+    if (data && typeof data === 'object') {
+      dbCache[STORAGE_KEY] = data;
+      return data;
+    }
+    return null;
+  } catch (err) {
+    console.warn('Failed to fetch remote site data:', err);
+    return null;
+  }
+}
+
+async function getGitHubFileSha(path, token) {
+  try {
+    const response = await fetch(`${GITHUB_API_BASE}/repos/${GITHUB_REPO}/contents/${path}?ref=${GITHUB_BRANCH}`, {
+      headers: {
+        Authorization: `token ${token}`,
+        Accept: 'application/vnd.github.v3+json',
+      },
+    });
+    if (!response.ok) {
+      return null;
+    }
+    const data = await response.json();
+    return data.sha;
+  } catch (err) {
+    console.warn('Failed to get GitHub file SHA:', err);
+    return null;
+  }
+}
+
+async function updateGitHubFile(path, content, message, token) {
+  const sha = await getGitHubFileSha(path, token);
+  const body = {
+    message,
+    content: encodeBase64(content),
+    branch: GITHUB_BRANCH,
+  };
+  if (sha) body.sha = sha;
+
+  const response = await fetch(`${GITHUB_API_BASE}/repos/${GITHUB_REPO}/contents/${path}`, {
+    method: 'PUT',
+    headers: {
+      Authorization: `token ${token}`,
+      Accept: 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`GitHub file update failed: ${response.status} ${errorText}`);
+  }
+
+  return await response.json();
+}
+
+async function saveSiteDataOnline(data, token) {
+  if (!token) {
+    throw new Error('GitHub token is required to publish live updates.');
+  }
+  const content = JSON.stringify(data, null, 2);
+  await updateGitHubFile(SITE_DATA_FILE, content, 'Update site content via admin', token);
+  dbCache[STORAGE_KEY] = data;
+}
+
 const defaultSiteData = {
   home: {
     heroSubtitle: "Community impact",
@@ -120,10 +204,10 @@ const defaultSiteData = {
     buttonPrimary: { text: "Donate securely", href: "donate.html" },
     buttonSecondary: { text: "Become a volunteer", href: "volunteer.html" },
     stats: [
-      { label: "Communities served", value: "42+" },
-      { label: "Volunteers engaged", value: "1,200+" },
-      { label: "Funds distributed", value: "$4.5M" },
-      { label: "Projects completed", value: "85+" },
+      { label: "Communities served", value: "0" },
+      { label: "Volunteers engaged", value: "0" },
+      { label: "Funds distributed", value: "0" },
+      { label: "Projects completed", value: "0" },
     ],
     programs: [
       { title: "Youth Education Support", description: "Scholarships, after-school learning labs, and digital skills training for underserved youth." },
@@ -559,6 +643,11 @@ function renderAdminDashboard(root) {
         <label for="admin-data-json">Site content JSON</label>
         <textarea id="admin-data-json" rows="18" style="width: 100%; border: 1px solid #cbd5e1; border-radius: 1rem; padding: 1rem; font-family: monospace;">${JSON.stringify(siteData, null, 2)}</textarea>
       </div>
+      <div class="form-field" style="margin-top: 1rem;">
+        <label for="github-token">GitHub publish token</label>
+        <input id="github-token" type="password" placeholder="Personal access token (public_repo)" style="width:100%; padding:0.75rem; border:1px solid #cbd5e1; border-radius:0.75rem;" />
+        <p style="font-size:0.9rem; color:#64748b; margin-top:0.5rem;">Add a GitHub token to publish content changes live to GitHub Pages. The token is not stored in the repo.</p>
+      </div>
       <div class="button-group" style="margin-top: 1rem;">
         <button id="admin-save" class="btn">Save changes</button>
         <button id="admin-reset" class="btn-secondary" type="button">Reset defaults</button>
@@ -608,14 +697,29 @@ function renderAdminDashboard(root) {
   if (saveButton) {
     saveButton.addEventListener("click", async function () {
       const textarea = document.getElementById("admin-data-json");
+      const tokenInput = document.getElementById("github-token");
       const feedback = document.getElementById("admin-save-feedback");
       if (!textarea || !feedback) return;
 
+      const token = tokenInput ? tokenInput.value.trim() : "";
       try {
         const updatedData = JSON.parse(textarea.value);
         await saveSiteData(updatedData);
-        feedback.style.color = "#0f766e";
-        feedback.textContent = "Content saved successfully. Refresh public pages to see updates.";
+
+        if (token) {
+          try {
+            await saveSiteDataOnline(updatedData, token);
+            feedback.style.color = "#0f766e";
+            feedback.textContent = "Content saved locally and published live to GitHub. Refresh public pages to see updates.";
+          } catch (onlineError) {
+            console.warn('Publish error:', onlineError);
+            feedback.style.color = "#f97316";
+            feedback.textContent = `Saved locally, but live publish failed: ${onlineError.message}`;
+          }
+        } else {
+          feedback.style.color = "#0f766e";
+          feedback.textContent = "Content saved locally. Add a GitHub token to publish live updates.";
+        }
       } catch (error) {
         feedback.style.color = "#c2410c";
         feedback.textContent = "Unable to parse JSON. Please correct the format and try again.";
@@ -966,6 +1070,7 @@ function initStorageSync() {
 document.addEventListener("DOMContentLoaded", async function () {
   await initIndexedDB();
   await loadDBCache();
+  await fetchSiteDataFile();
   initNavigation();
   initDonationForm();
   initStorageSync();
