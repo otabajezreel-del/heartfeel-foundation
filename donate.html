@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Donate to HeartFeel Foundation with Mobile Money, Visa/Mastercard, or PayPal support." />
+    <title>Donate | HeartFeel Foundation</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body data-page="donate">
+    <header class="site-header">
+      <div class="container site-nav">
+        <a href="index.html" class="site-brand">
+          <img src="assets/images/logo.png" alt="HeartFeel Foundation logo" class="site-logo" />
+          <span class="site-brand-text">HeartFeel Foundation</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+        <nav id="main-navigation" class="site-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">News</a>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="contact.html">Contact</a>
+          <a href="donate.html" class="active">Donate</a>
+          <a href="admin.html">Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="container hero">
+        <span class="section-subtitle" id="donate-hero-subtitle">Secure donation</span>
+        <h1 class="hero-title" id="donate-hero-title">Support HeartFeel Foundation with trusted payment options.</h1>
+        <p class="hero-copy" id="donate-hero-copy">Choose Mobile Money, Visa/Mastercard, or PayPal and contribute to projects that deliver transparent, high-impact results.</p>
+      </section>
+
+      <section class="container cards-grid">
+        <article class="donate-card" id="donate-assistance">
+          <h2 class="section-heading" id="donate-assistance-title">Donation assistance</h2>
+          <p>We accept multiple payment options to make giving easy and accessible. The form below is ready for integration with secure payment providers.</p>
+          <ul>
+            <li>Mobile Money for local and regional donors</li>
+            <li>Visa / Mastercard for global contributors</li>
+            <li>PayPal for trusted one-click support</li>
+          </ul>
+        </article>
+        <article class="donate-card" id="donate-why">
+          <h2 class="section-heading" id="donate-why-title">Why donate?</h2>
+          <p id="donate-why-copy">Your gift supports community programs, financial transparency, and volunteer-led solutions with measurable outcomes.</p>
+        </article>
+      </section>
+
+      <section class="container section-card">
+        <h2 class="section-heading">Donation form</h2>
+        <form id="donation-form" class="form-grid" method="post" action="#">
+          <div class="form-field">
+            <label for="amount">Donation amount (USD)</label>
+            <input id="amount" name="amount" type="number" min="10" value="50" required />
+          </div>
+          <div class="form-field">
+            <label for="payment-method">Payment method</label>
+            <select id="payment-method" name="payment-method" required>
+              <option>Mobile Money</option>
+              <option>Visa / Mastercard</option>
+              <option>PayPal</option>
+            </select>
+          </div>
+          <div class="form-field" style="grid-column: 1 / -1;">
+            <label for="donation-note">Message (optional)</label>
+            <textarea id="donation-note" name="donation-note" rows="4" placeholder="Share your support"></textarea>
+          </div>
+          <div class="form-field" style="grid-column: 1 / -1;">
+            <button type="submit" class="btn">Proceed to payment</button>
+          </div>
+          <p id="donation-status" style="color:#475569; grid-column: 1 / -1;"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-top">
+          <div>
+            <strong>HeartFeel Foundation</strong>
+            <p>Driving measurable impact through community programs, fundraising, and transparency.</p>
+          </div>
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="programs.html">Programs</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-bottom">© 2026 HeartFeel Foundation. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
