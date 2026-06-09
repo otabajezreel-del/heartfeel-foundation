@@ -1,0 +1,238 @@
+{
+  "home": {
+    "heroSubtitle": "Community impact",
+    "heroTitle": "Inspiring trust, building hope, and funding lasting change.",
+    "heroCopy": "HeartFeel Foundation connects donors and volunteers to programs that support education, health, food security, and local leadership through transparent fundraising and measurable results.",
+    "buttonPrimary": {
+      "text": "Donate securely",
+      "href": "donate.html"
+    },
+    "buttonSecondary": {
+      "text": "Become a volunteer",
+      "href": "volunteer.html"
+    },
+    "stats": [
+      {
+        "label": "Communities served",
+        "value": "0"
+      },
+      {
+        "label": "Volunteers engaged",
+        "value": "0"
+      },
+      {
+        "label": "Funds distributed",
+        "value": "0"
+      },
+      {
+        "label": "Projects completed",
+        "value": "0"
+      }
+    ],
+    "programs": [
+      {
+        "title": "Youth Education Support",
+        "description": "Scholarships, after-school learning labs, and digital skills training for underserved youth."
+      },
+      {
+        "title": "Food Security Initiatives",
+        "description": "Community gardens, emergency food distributions, and nutrition workshops for families in need."
+      },
+      {
+        "title": "Health & Wellness Outreach",
+        "description": "Mobile clinics, mental health counseling, and vaccination drives to strengthen local care."
+      },
+      {
+        "title": "Women's Empowerment",
+        "description": "Entrepreneurship coaching, savings groups, and leadership development for women."
+      }
+    ],
+    "successStories": [
+      {
+        "quote": "From school dropouts to scholarship recipients, our learning lab has restarted 120 dreams.",
+        "author": "Amina, Program Coordinator"
+      },
+      {
+        "quote": "A community garden now supports 150 families every month with fresh produce and nutrition education.",
+        "author": "Samuel, Local Partner"
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "HeartFeel made me feel seen and supported during a time when resources were scarce.",
+        "name": "Grace N.",
+        "role": "Donor & Community Advocate"
+      },
+      {
+        "quote": "The transparency reports made it easy to trust where donations were going.",
+        "name": "Michael T.",
+        "role": "Corporate Sponsor"
+      }
+    ],
+    "bottomCards": [
+      {
+        "title": "Donor trust and transparency",
+        "description": "We publish financial transparency reports and program budgets so supporters can see exactly how donations are spent."
+      },
+      {
+        "title": "Volunteer leadership",
+        "description": "Volunteers play a central role in our outreach, training, and care programs. Every opportunity is designed with safety and community partnership in mind."
+      }
+    ]
+  },
+  "about": {
+    "heroSubtitle": "About HeartFeel",
+    "heroTitle": "Building trust through transparency and meaningful impact.",
+    "heroCopy": "Our mission is to deliver compassionate support and measurable outcomes through inclusive programs, fundraising integrity, and community partnership.",
+    "cards": [
+      {
+        "subtitle": "Mission & Values",
+        "title": "We invest in projects that lift lives and strengthen local capacity.",
+        "description": "Our core values are accountability, empathy, equity, and sustainability. Every program is guided by community priorities and long-term outcomes."
+      },
+      {
+        "subtitle": "Financial Transparency",
+        "title": "Open reporting for every donor and partner.",
+        "description": "We publish quarterly financial reports, program budgets, and impact statements so supporters always know how contributions are used."
+      },
+      {
+        "subtitle": "Partnership Model",
+        "title": "Collaborating with local leaders and global donors.",
+        "description": "Our work is grounded in local partnership, public agency support, and donor alignment to ensure every intervention is sustainable and relevant."
+      }
+    ],
+    "whatWeDo": {
+      "title": "Delivering relief, opportunity, and accountable stewardship.",
+      "items": [
+        "Provide urgent relief through food, healthcare, and shelter programs.",
+        "Develop long-term education, livelihood, and empowerment initiatives.",
+        "Support volunteers with training, safety protocols, and mentorship.",
+        "Maintain open governance and donor reporting for accountability."
+      ],
+      "buttonText": "Connect with our team",
+      "buttonHref": "contact.html"
+    }
+  },
+  "programs": {
+    "heroSubtitle": "Our programs",
+    "heroTitle": "Projects designed for lasting impact.",
+    "heroCopy": "Each program is built around community-led priorities, measurable outcomes, and transparent funding so donors can see meaningful progress.",
+    "programs": [
+      {
+        "title": "Youth Education Support",
+        "description": "Scholarships, after-school learning labs, mentorship, and digital skills training for young learners."
+      },
+      {
+        "title": "Food Security Initiatives",
+        "description": "Community gardens, emergency food distributions, nutrition workshops, and sustainable farming guidance."
+      },
+      {
+        "title": "Health & Wellness Outreach",
+        "description": "Mobile clinics, vaccination drives, mental health counseling, and wellness education across underserved regions."
+      },
+      {
+        "title": "Women's Empowerment",
+        "description": "Business coaching, savings groups, and leadership programs that help women build confidence and independence."
+      }
+    ],
+    "showcases": [
+      "Education centers offering evening tutoring and career mentoring.",
+      "Local gardens supplying fresh produce to schools and families.",
+      "Wellness teams providing free health screenings and counseling.",
+      "Entrepreneurship programs helping women launch small businesses."
+    ]
+  },
+  "gallery": {
+    "heroSubtitle": "Gallery",
+    "heroTitle": "Photos and documentaries showing our impact.",
+    "heroCopy": "Browse images and short films that capture community progress, volunteer action, and donor-supported success stories.",
+    "images": [
+      {
+        "title": "Community garden harvest",
+        "url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "title": "Mobile health clinic",
+        "url": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "title": "Volunteer training session",
+        "url": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "title": "Celebrating graduation",
+        "url": "https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&w=900&q=80"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Community recovery after crisis",
+        "src": "https://www.youtube.com/embed/ScMzIvxBSi4"
+      },
+      {
+        "title": "Youth mental health and resilience",
+        "src": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+      }
+    ]
+  },
+  "blog": {
+    "heroSubtitle": "News & Updates",
+    "heroTitle": "Insights, transparency, and the latest program news.",
+    "heroCopy": "Stay informed with stories from our field teams, donor reports, and project highlights that demonstrate accountability and progress.",
+    "posts": [
+      {
+        "subtitle": "Featured story",
+        "title": "Building Resilient Communities After Crisis",
+        "summary": "How our teams restored clean water access and stable food supply after flood season, bringing immediate relief and long-term resilience.",
+        "href": "#"
+      },
+      {
+        "subtitle": "Program update",
+        "title": "Investing in Youth Mental Health",
+        "summary": "The new counseling program is improving academic outcomes and emotional wellbeing for young people across partner communities.",
+        "href": "#"
+      },
+      {
+        "subtitle": "Transparency report",
+        "title": "Q1 2026 Financial Transparency Report",
+        "summary": "Our latest financial and program performance report, published for donors, partners, and community stakeholders.",
+        "href": "#"
+      }
+    ]
+  },
+  "volunteer": {
+    "heroSubtitle": "Volunteer",
+    "heroTitle": "Join our volunteer community and make a meaningful difference.",
+    "heroCopy": "Register to support programs, events, outreach, and administrative coordination across our projects."
+  },
+  "contact": {
+    "heroSubtitle": "Contact",
+    "heroTitle": "Reach out for partnership, support, or media inquiries.",
+    "heroCopy": "We welcome donors, volunteers, partners, and journalists to connect with our team for thoughtful responses and collaboration.",
+    "email": "info@heartfeelfoundation.org",
+    "phone": "+1 (555) 123-4567",
+    "address": "258 Community Ave, Hope City, CA",
+    "hours": [
+      "Monday \u2014 Friday: 9am to 6pm",
+      "Saturday: 10am to 2pm"
+    ]
+  },
+  "donate": {
+    "heroSubtitle": "Secure donation",
+    "heroTitle": "Support HeartFeel Foundation with trusted payment options.",
+    "heroCopy": "Choose Mobile Money, Visa/Mastercard, or PayPal and contribute to projects that deliver transparent, high-impact results.",
+    "assistance": {
+      "title": "Donation assistance",
+      "body": "We accept multiple payment options to make giving easy and accessible. The form below is ready for integration with secure payment providers.",
+      "methods": [
+        "Mobile Money for local and regional donors",
+        "Visa / Mastercard for global contributors",
+        "PayPal for trusted one-click support"
+      ]
+    },
+    "why": {
+      "title": "Why donate?",
+      "body": "Your gift supports community programs, financial transparency, and volunteer-led solutions with measurable outcomes."
+    }
+  }
+}

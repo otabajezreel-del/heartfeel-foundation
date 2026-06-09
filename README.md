@@ -58,3 +58,14 @@ python -m http.server 8000
 ```
 
 Then open `http://localhost:8000`.
+
+## Live admin publishing
+
+The admin panel can save content changes live to the GitHub repository using a personal access token.
+
+1. Generate a GitHub personal access token with the `public_repo` scope.
+2. Open `admin.html` and log in with your admin password.
+3. Paste the token into the GitHub publish field in the admin panel.
+4. Save changes. This updates `site-data.json` in the repository and publishes the data live.
+
+> Note: the token is only used in your browser session and is not saved to the repository.
