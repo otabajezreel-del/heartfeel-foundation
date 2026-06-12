@@ -1,4 +1,4 @@
-const ADMIN_PASSWORD = "otabajezreel256";
+const ADMIN_PASSWORD = "HeartFeelAdmin2026";
 const STORAGE_KEY = "heartfeel_site_data";
 const AUTH_KEY = "heartfeel_admin_auth";
 const DB_NAME = "HeartFeelDB";
