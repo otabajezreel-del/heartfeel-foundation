@@ -146,34 +146,8 @@
     "heroSubtitle": "Gallery",
     "heroTitle": "Photos and documentaries showing our impact.",
     "heroCopy": "Browse images and short films that capture community progress, volunteer action, and donor-supported success stories.",
-    "images": [
-      {
-        "title": "Community garden harvest",
-        "url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        "title": "Mobile health clinic",
-        "url": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        "title": "Volunteer training session",
-        "url": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        "title": "Celebrating graduation",
-        "url": "https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&w=900&q=80"
-      }
-    ],
-    "videos": [
-      {
-        "title": "Community recovery after crisis",
-        "src": "https://www.youtube.com/embed/ScMzIvxBSi4"
-      },
-      {
-        "title": "Youth mental health and resilience",
-        "src": "https://www.youtube.com/embed/aqz-KE-bpKQ"
-      }
-    ]
+    "images": [],
+    "videos": []
   },
   "blog": {
     "heroSubtitle": "News & Updates",
@@ -210,10 +184,10 @@
     "heroTitle": "Reach out for partnership, support, or media inquiries.",
     "heroCopy": "We welcome donors, volunteers, partners, and journalists to connect with our team for thoughtful responses and collaboration.",
     "email": "info@heartfeelfoundation.org",
-    "phone": "+1 (555) 123-4567",
-    "address": "258 Community Ave, Hope City, CA",
+    "phone": "+256 704207791",
+    "address": "republic street mbale uganda",
     "hours": [
-      "Monday \u2014 Friday: 9am to 6pm",
+      "Monday — Friday: 9am to 6pm",
       "Saturday: 10am to 2pm"
     ]
   },
